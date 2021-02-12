@@ -1,47 +1,61 @@
 import fs from 'fs'
-import matter from 'gray-matter'
 import { join } from 'path'
+import matter from 'gray-matter'
+import rehypePrism from '@mapbox/rehype-prism'
+import readingTime from 'reading-time'
+import renderToString from 'next-mdx-remote/render-to-string'
+import MDXComponents from '@components/mdx-component'
 
 const postsDir = join(process.cwd(), '_posts')
 
-export function getPostSlug() {
+export async function getPostsSlug() {
     return fs.readdirSync(postsDir)
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
+export async function getPostBySlug(slug: string) {
     // remove exstension
-    const clearSlug = slug.replace(/\.md$/, '')
-    const fullPath = join(postsDir, `${clearSlug}.md`)
+    const clearSlug = slug.replace(/\.mdx$/, '')
+    const fullPath = join(postsDir, `${clearSlug}.mdx`)
+
     const fileContent = fs.readFileSync(fullPath, 'utf-8')
+
     const { data, content } = matter(fileContent)
 
-    type Items = {
-        [key: string]: string
-    }
-
-    let items: Items = {}
-
-    // assign field to field needed
-    fields.forEach((field) => {
-        if (field === 'slug') {
-            items[field] = clearSlug
-        }
-        if (field === 'content') {
-            items[field] = content
-        }
-
-        if (data[field]) {
-            items[field] = data[field]
-        }
+    const mdxSource = await renderToString(content, {
+        components: MDXComponents,
+        mdxOptions: {
+            remarkPlugins: [
+                require('remark-autolink-headings'),
+                require('remark-slug'),
+                require('remark-code-titles'),
+            ],
+            rehypePlugins: [rehypePrism],
+        },
     })
 
-    return items
+    return {
+        mdxSource,
+        frontMatter: {
+            slug: clearSlug || null,
+            readingTime: readingTime(content),
+            ...data,
+        },
+    }
 }
 
-export function getAllPosts(fields: string[] = []) {
-    const slugs = getPostSlug()
-    const posts = slugs
-        .map((slug) => getPostBySlug(slug, fields))
-        .sort((first, second) => (first.date > second.date ? -1 : 1))
-    return posts
+export async function getAllPosts() {
+    const slugs = await getPostsSlug()
+
+    return slugs.map((slug: string) => {
+        const fileContent = fs.readFileSync(join(postsDir, slug), 'utf8')
+        const clearSlug = slug.replace(/\.mdx$/, '')
+
+        const { data, content } = matter(fileContent)
+
+        return {
+            ...data,
+            slug: clearSlug,
+            readingTime: readingTime(content),
+        }
+    })
 }

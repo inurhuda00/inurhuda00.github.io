@@ -1,6 +1,10 @@
 import { DefaultSeo, DefaultSeoProps } from 'next-seo'
 import { AppProps } from 'next/app'
+import ProgressBar from 'nextjs-progressbar'
+import { MDXProvider } from '@mdx-js/react'
 import '../styles/index.css'
+import MDXComponents from '@components/mdx-component'
+import React from 'react'
 
 const seo: DefaultSeoProps = {
     openGraph: {
@@ -19,9 +23,10 @@ const seo: DefaultSeoProps = {
 
 export default function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <>
+        <MDXProvider components={MDXComponents}>
             <DefaultSeo {...seo} />
+            <ProgressBar color="black" height={3} />
             <Component {...pageProps} />
-        </>
+        </MDXProvider>
     )
 }

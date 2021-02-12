@@ -1,22 +1,19 @@
-import Alert from './alert'
+import { Fragment } from 'react'
 import Footer from './footer'
-import Meta from './meta'
+import Header from './header'
 
 type Props = {
-    preview?: boolean
     children: React.ReactNode
+    title?: string
 }
 
-const Layout = ({ preview, children }: Props) => {
+const Layout = ({ title, children }: Props) => {
     return (
-        <>
-            <Meta />
-            <div className="min-h-screen">
-                <Alert preview={preview} />
-                <main>{children}</main>
-            </div>
-            <Footer />
-        </>
+        <Fragment>
+            <Header title={title} />
+            <main className="max-w-3xl mx-auto p-5 lg:px-8">{children}</main>
+            <Footer title={title} />
+        </Fragment>
     )
 }
 

@@ -5,5 +5,5 @@
 const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-    assetPrefix: !debug ? 'https://inurhuda00.github.io' : '',
+    assetPrefix: !debug ? process.env.SITE_URL : '',
 }

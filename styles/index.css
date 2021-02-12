@@ -1,3 +1,131 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: optional;
+    src: url(/fonts/inter-var-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+        U+FFFD;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+@layer utilities {
+    .sticky-nav {
+        position: sticky;
+        z-index: 10;
+        top: 0;
+        backdrop-filter: saturate(180%) blur(20px);
+        transition: background-color 0.1 ease-in-out;
+    }
+}
+
+@layer components {
+    .btn-nav {
+        @apply inline-flex items-center p-2 focus:outline-none hover:bg-gray-100 rounded;
+    }
+
+    /* code highlight */
+
+    code[class*='language-'],
+    pre[class*='language-'] {
+        @apply text-gray-50 text-left whitespace-pre leading-normal;
+    }
+
+    /* Code blocks */
+    pre[class*='language-'] {
+        @apply p-4 m-1 overflow-auto rounded-md;
+    }
+
+    :not(pre) > code[class*='language-'],
+    pre[class*='language-'] {
+        @apply bg-gray-800;
+    }
+
+    /* Inline code */
+    :not(pre) > code[class*='language-'] {
+        @apply whitespace-normal rounded p-1;
+    }
+
+    .token.comment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata {
+        @apply text-gray-400;
+    }
+
+    .token.punctuation {
+        @apply text-blue-50;
+    }
+
+    .token.namespace {
+        @apply opacity-70;
+    }
+
+    .token.property,
+    .token.tag,
+    .token.constant,
+    .token.symbol,
+    .token.deleted {
+        @apply text-red-400;
+    }
+
+    .token.boolean,
+    .token.number {
+        @apply text-purple-400;
+    }
+
+    .token.selector,
+    .token.attr-name,
+    .token.string,
+    .token.char,
+    .token.builtin,
+    .token.inserted {
+        @apply text-green-400;
+    }
+
+    .token.operator,
+    .token.entity,
+    .token.url,
+    .language-css .token.string,
+    .style .token.string,
+    .token.variable {
+        @apply text-yellow-50;
+    }
+
+    .token.atrule,
+    .token.attr-value,
+    .token.function,
+    .token.class-name {
+        @apply text-yellow-400;
+    }
+
+    .token.keyword {
+        @apply text-blue-400;
+    }
+
+    .token.regex,
+    .token.important {
+        @apply text-yellow-500;
+    }
+
+    .token.important,
+    .token.bold {
+        @apply font-bold;
+    }
+    .token.italic {
+        font-style: italic;
+    }
+
+    .token.entity {
+        @apply cursor-help;
+    }
+
+    /* end code highlight */
+}

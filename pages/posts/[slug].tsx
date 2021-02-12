@@ -1,126 +1,85 @@
-import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
-import Head from 'next/head'
-
-import Container from '@components/container'
-import PostBody from '@components/post-body'
-import Header from '@components/header'
-import PostHeader from '@components/post-header'
 import Layout from '@components/layout'
+import MDXComponents from '@components/mdx-component'
+import PostHeader from '@components/post-header'
 import PostTitle from '@components/post-title'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
-import markdownToHtml from '../../lib/markdownToHtml'
-import PostType from '../../types/post'
-import { Fragment } from 'react'
+import { getAllPosts, getPostBySlug } from '@lib/api'
 import { NextSeo } from 'next-seo'
+import { useRouter } from 'next/dist/client/router'
+import React, { Fragment } from 'react'
+import hydrate from 'next-mdx-remote/hydrate'
 
-type Props = {
-    post: PostType
-    morePosts: PostType[]
-    preview?: boolean
-}
-
-const Post = ({ post, morePosts, preview }: Props) => {
+const Post = ({ postData }: any) => {
     const router = useRouter()
-    if (!router.isFallback && !post?.slug) {
-        return <ErrorPage statusCode={404} />
-    }
+    const { mdxSource, frontMatter } = postData
+
+    const content = hydrate(mdxSource, { components: MDXComponents })
+
     return (
         <Fragment>
             <NextSeo
-                title={post.title}
+                title={frontMatter.title}
                 canonical="http://inurhuda00.github.io/"
                 openGraph={{
-                    title: `${post.title}`,
-                    description: `${post.excerpt}`,
-                    url: `${post.url}`,
+                    title: `${frontMatter.title}`,
+                    description: `${frontMatter.summary}`,
+                    url: `${frontMatter.url}`,
                     type: 'article',
                     article: {
-                        publishedTime: `${post.created_at}`,
-                        modifiedTime: `${post.updated_at}`,
-                        section: `${post.tags.join(' ')}`,
-                        authors: [`${post.author.url}`],
-                        tags: post.tags,
+                        publishedTime: `${frontMatter.created_at}`,
+                        modifiedTime: `${frontMatter.updated_at}`,
+                        section: `${frontMatter.tags.join(' ')}`,
+                        authors: [`${frontMatter.author.url}`],
+                        tags: frontMatter.tags,
                     },
                     images: [
                         {
-                            url: `${post.ogImage.url}`,
+                            url: `${frontMatter.image}`,
                             width: 850,
                             height: 650,
-                            alt: `${post.title}`,
+                            alt: `${frontMatter.title}`,
                         },
                     ],
                 }}
             />
-            <Layout preview={preview}>
-                <Container>
-                    <Header />
-                    {router.isFallback ? (
-                        <PostTitle>Loading…</PostTitle>
-                    ) : (
-                        <>
-                            <article className="mb-32">
-                                <PostHeader
-                                    title={post.title}
-                                    coverImage={post.coverImage}
-                                    date={post.created_at}
-                                    author={post.author}
-                                />
-                                <PostBody content={post.content} />
-                            </article>
-                        </>
-                    )}
-                </Container>
+            <Layout>
+                {router.isFallback ? (
+                    <PostTitle>Loading…</PostTitle>
+                ) : (
+                    <article className="mb-32">
+                        <PostHeader
+                            title={frontMatter.title}
+                            image={frontMatter.image}
+                            date={frontMatter.created_at}
+                            author={frontMatter.author}
+                        />
+                        <section className="prose max-w-none w-full">{content}</section>
+                    </article>
+                )}
             </Layout>
         </Fragment>
     )
 }
 
-export default Post
-
-type Params = {
-    params: {
-        slug: string
-    }
-}
-
-export async function getStaticProps({ params }: Params) {
-    const post = getPostBySlug(params.slug, [
-        'slug',
-        'title',
-        'created_at',
-        'updated_at',
-        'coverImage',
-        'author',
-        'excerpt',
-        'tags',
-        'ogImage',
-        'url',
-        'content',
-    ])
-    const content = await markdownToHtml(post.content || '')
-
+export const getStaticProps = async ({ params }: any) => {
+    const postData = await getPostBySlug(params.slug)
     return {
         props: {
-            post: {
-                ...post,
-                content,
-            },
+            postData,
         },
     }
 }
 
-export async function getStaticPaths() {
-    const posts = getAllPosts(['slug'])
+export const getStaticPaths = async () => {
+    const paths = await getAllPosts()
 
     return {
-        paths: posts.map((posts) => {
-            return {
-                params: {
-                    slug: posts.slug,
-                },
-            }
-        }),
+        paths: paths.map(({ slug }) => ({
+            params: {
+                slug,
+            },
+        })),
         fallback: false,
     }
 }
+
+export default Post

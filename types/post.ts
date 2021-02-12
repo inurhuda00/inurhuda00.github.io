@@ -5,15 +5,18 @@ type PostType = {
     title: string
     created_at: string
     updated_at: string
-    coverImage: string
+    image: string
     author: Author
-    excerpt: string
+    summary: string
     tags: Array<string>
-    ogImage: {
-        url: string
-    }
     url: string
     content: string
+    readingTime: {
+        text: string
+        minutes: number
+        time: number
+        words: number
+    }
 }
 
 export default PostType
