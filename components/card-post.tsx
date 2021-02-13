@@ -7,18 +7,21 @@ import DateFormatter from './date-formatter'
 const CardPost = ({ post }: { post: PostType }) => {
     return (
         <div className="flex flex-col xs:flex-row my-6" key={post.slug}>
-            <div className="p-2">
-                <Image
-                    width="280"
-                    height="200"
-                    objectFit="fill"
-                    objectPosition="center"
-                    priority
-                    quality={50}
-                    src={post.image}
-                    alt="dynamic-routing.jpg"
-                />
-            </div>
+            <Link href={`/posts/${post.slug}`}>
+                <a className="p-2">
+                    <Image
+                        objectFit="fill"
+                        objectPosition="center"
+                        quality={50}
+                        width="280"
+                        height="184"
+                        priority
+                        src={post.image}
+                        alt={`Cover Image for ${post.title}`}
+                        className="rounded"
+                    />
+                </a>
+            </Link>
 
             <div className="w-full space-y-2 pl-4">
                 <Link href={`/posts/${post.slug}`}>

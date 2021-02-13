@@ -19,8 +19,8 @@ const CoverImage = ({ title, src, slug }: Props) => {
             priority
             quality={50}
             alt={`Cover Image for ${title}`}
-            className={cn('shadow-small rounded-md', {
-                'hover:shadow-medium transition-shadow duration-200': slug,
+            className={cn('shadow-sm rounded-md', {
+                'hover:shadow-md transition-shadow duration-200': slug,
             })}
         />
     )

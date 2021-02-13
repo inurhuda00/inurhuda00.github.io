@@ -49,7 +49,8 @@ const Post = ({ postData }: any) => {
                         <PostHeader
                             title={frontMatter.title}
                             image={frontMatter.image}
-                            date={frontMatter.created_at}
+                            created_at={frontMatter.created_at}
+                            readingTime={frontMatter.readingTime}
                             author={frontMatter.author}
                         />
                         <section className="prose max-w-none w-full">{content}</section>

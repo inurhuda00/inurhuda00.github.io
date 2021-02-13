@@ -1,12 +1,15 @@
 import Image from 'next/image'
 import { Fragment, useState } from 'react'
+import DateFormatter from './date-formatter'
 
-type Props = {
+interface Props {
     name: string
     picture: string
+    read: string
+    date: string
 }
 
-const Avatar = ({ name, picture }: Props) => {
+const Avatar = ({ name, picture, read, date }: Props) => {
     const [mark, setMark] = useState(false)
 
     return (
@@ -29,7 +32,7 @@ const Avatar = ({ name, picture }: Props) => {
 
                 <div className="flex items-center space-x-6">
                     <p className="hidden sm:block text-sm text-gray-600 min-w-32">
-                        12 min read • Dec 5, 2020
+                        {read} • <DateFormatter dateString={date} />
                     </p>
 
                     <div>
@@ -76,7 +79,7 @@ const Avatar = ({ name, picture }: Props) => {
                 </div>
             </div>
             <p className="mt-8 sm:hidden text-sm text-gray-600 min-w-32">
-                12 min read • Dec 5, 2020
+                {read} • <DateFormatter dateString={date} />
             </p>
         </Fragment>
     )
