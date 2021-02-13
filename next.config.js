@@ -5,5 +5,9 @@
 const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
+    images: {
+        loader: 'cloudinary',
+        path: process.env.CLOUDINARY_PATH,
+    },
     assetPrefix: !debug ? process.env.SITE_URL : '',
 }
