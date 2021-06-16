@@ -4,7 +4,7 @@ import React from 'react'
 import PostType from 'types/post'
 import DateFormatter from './date-formatter'
 
-const CardPost = ({ post }: { post: PostType }) => {
+const CardPost = ({ post }: { post: PostType | { [key: string]: any } }) => {
     return (
         <div className="flex flex-col xs:flex-row my-6" key={post.slug}>
             <Link href={`/posts/${post.slug}`}>
@@ -32,8 +32,8 @@ const CardPost = ({ post }: { post: PostType }) => {
                     </a>
                 </Link>
 
-                <p className="text-gray-600">{post.summary}</p>
-                <p className="text-sm text-gray-600 min-w-32 mt-2 md:mt-0">
+                <p className="text-gray-600 dark:text-gray-400">{post.summary}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 min-w-32 mt-2 md:mt-0">
                     {post.readingTime.text} •{' '}
                     <DateFormatter dateString={post.created_at} />
                 </p>

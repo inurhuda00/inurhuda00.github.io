@@ -25,13 +25,15 @@ const Avatar = ({ name, picture, read, date }: Props) => {
                         alt={name}
                     />
                     <span>
-                        <p className="text-xs text-gray-600">written by</p>
+                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                            written by
+                        </p>
                         <p className="text-lg font-semibold hover:underline">{name}</p>
                     </span>
                 </div>
 
                 <div className="flex items-center space-x-6">
-                    <p className="hidden sm:block text-sm text-gray-600 min-w-32">
+                    <p className="hidden sm:block text-sm text-gray-600 dark:text-gray-400 min-w-32">
                         {read} • <DateFormatter dateString={date} />
                     </p>
 
@@ -78,7 +80,7 @@ const Avatar = ({ name, picture, read, date }: Props) => {
                     </div>
                 </div>
             </div>
-            <p className="mt-8 sm:hidden text-sm text-gray-600 min-w-32">
+            <p className="mt-8 sm:hidden text-sm text-gray-600 dark:text-gray-400 min-w-32">
                 {read} • <DateFormatter dateString={date} />
             </p>
         </Fragment>

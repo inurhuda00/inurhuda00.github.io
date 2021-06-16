@@ -16,25 +16,25 @@ const Footer = ({ title = 'Blog' }: Props) => {
                         <a
                             target="_blank"
                             rel="noreferrer"
-                            className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
+                            className="mx-3 bg-black hover:bg-gray-50 hover:text-black border border-black text-gray-50 font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0 dark:border-gray-50"
                         >
                             View on GitHub
                         </a>
                     </Link>
                 </div>
             </div>
-            <section className="text-gray-600 body-font">
+            <section>
                 <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-                    <div className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <div className="flex title-font font-medium items-center md:justify-start justify-center">
                         <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight md:tracking-tighter leading-tight">
                             {title}.
                         </h2>
                     </div>
-                    <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-                        © 2021 suog
+                    <p className="text-sm text-gray-600 dark:text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+                        © 2021
                         <Link href="https://github.com/inurhuda00/">
                             <a
-                                className="text-gray-600 ml-1"
+                                className="text-gray-600 dark:text-gray-400 ml-1"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
@@ -42,8 +42,8 @@ const Footer = ({ title = 'Blog' }: Props) => {
                             </a>
                         </Link>
                     </p>
-                    <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-                        <a className="text-gray-500">
+                    <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start space-x-3">
+                        <a>
                             <svg
                                 fill="currentColor"
                                 strokeLinecap="round"
@@ -55,7 +55,7 @@ const Footer = ({ title = 'Blog' }: Props) => {
                                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
                             </svg>
                         </a>
-                        <a className="ml-3 text-gray-500">
+                        <a>
                             <svg
                                 fill="currentColor"
                                 strokeLinecap="round"
@@ -67,7 +67,7 @@ const Footer = ({ title = 'Blog' }: Props) => {
                                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
                             </svg>
                         </a>
-                        <a className="ml-3 text-gray-500">
+                        <a>
                             <svg
                                 fill="none"
                                 stroke="currentColor"
@@ -88,7 +88,7 @@ const Footer = ({ title = 'Blog' }: Props) => {
                                 <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
                             </svg>
                         </a>
-                        <a className="ml-3 text-gray-500">
+                        <a>
                             <svg
                                 fill="currentColor"
                                 stroke="currentColor"

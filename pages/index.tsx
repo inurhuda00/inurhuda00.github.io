@@ -14,13 +14,13 @@ type Props = {
 const Index = ({ posts }: Props) => {
     return (
         <Layout title="Home">
-            <section className="text-gray-900">
+            <section>
                 <div className="flex flex-col justify-center items-start py-12">
                     <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4">
                         Hey, I’m Mr. Goodman
                     </h1>
 
-                    <h2 className="prose text-gray-600 mb-16">
+                    <h2 className="prose text-gray-600 dark:text-gray-400 mb-16">
                         Seorang yang suka berkolaborasi dan mencoba hal-hal baru
                         bersama-sama. Suka dengan hal-hal tentang UI/UIX dan mendevelop
                         web UI. Check beberapa hal tentang UI disini ––{' '}
@@ -44,35 +44,35 @@ const Index = ({ posts }: Props) => {
                             Project
                         </h3>
 
-                        <div className="flex items-center border border-gray-200 dark:border-gray-800 rounded p-4 my-6">
+                        <div className="flex items-center border border-gray-200 rounded p-4 my-6">
                             <div>
-                                <h4 className="text-lg font-bold tracking-tight text-gray-900 dark:text-gray-100">
+                                <h4 className="text-lg font-bold tracking-tight">
                                     Past, Present, and Future of React State Management
                                 </h4>
-                                <p className="leading-5 text-gray-700 dark:text-gray-300">
+                                <p className="leading-5 text-gray-600 dark:text-gray-400">
                                     Learn about the history of state management in React
                                     and what the preferred solutions are today.
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-center border border-gray-200 dark:border-gray-800 rounded p-4 my-6">
+                        <div className="flex items-center border border-gray-200 rounded p-4 my-6">
                             <div>
-                                <h4 className="text-lg font-bold tracking-tight text-gray-900 dark:text-gray-100">
+                                <h4 className="text-lg font-bold tracking-tight">
                                     Past, Present, and Future of React State Management
                                 </h4>
-                                <p className="leading-5 text-gray-700 dark:text-gray-300">
+                                <p className="leading-5 text-gray-600 dark:text-gray-400">
                                     Learn about the history of state management in React
                                     and what the preferred solutions are today.
                                 </p>
                             </div>
                         </div>
 
-                        <div className="flex items-center border border-gray-200 dark:border-gray-800 rounded p-4 my-6">
+                        <div className="flex items-center border border-gray-200 rounded p-4 my-6">
                             <div>
-                                <h4 className="text-lg font-bold tracking-tight text-gray-900 dark:text-gray-100">
+                                <h4 className="text-lg font-bold tracking-tight">
                                     Past, Present, and Future of React State Management
                                 </h4>
-                                <p className="leading-5 text-gray-700 dark:text-gray-300">
+                                <p className="leading-5 text-gray-600 dark:text-gray-400">
                                     Learn about the history of state management in React
                                     and what the preferred solutions are today.
                                 </p>

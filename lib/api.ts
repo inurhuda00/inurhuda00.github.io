@@ -1,6 +1,6 @@
 import fs from 'fs'
 import { join } from 'path'
-import matter from 'gray-matter'
+import matter, { GrayMatterFile } from 'gray-matter'
 import rehypePrism from '@mapbox/rehype-prism'
 import readingTime from 'reading-time'
 import renderToString from 'next-mdx-remote/render-to-string'

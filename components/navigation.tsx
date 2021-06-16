@@ -1,12 +1,7 @@
 import Link from 'next/link'
+import { TLink } from './header'
 
-let links: Array<{ href: string; name: string }> = [
-    { name: 'Blog', href: '/blog' },
-    { name: 'Project', href: '/project' },
-    { name: 'Home', href: '/' },
-]
-
-const Navigation = () => {
+const Navigation = ({ links }: { links: Array<TLink> }) => {
     return (
         <div className="hidden md:flex space-x-10">
             {links.map(({ name, href }) => (

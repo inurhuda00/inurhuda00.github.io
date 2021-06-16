@@ -16,6 +16,7 @@ module.exports = {
                 'light-grayish-magenta': '#F7F2F7',
                 'dark-grayish-magenta': '#502050',
                 'soft-pink': '#EE68A4',
+                crimson: '#dd3456',
             },
             fontFamily: {
                 spartan: ['Spartan'],

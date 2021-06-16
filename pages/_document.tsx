@@ -53,7 +53,7 @@ export default class MyDocument extends Document {
                         content="https://og-image.now.sh/**inurhuda00**%20blog.png?theme=light&md=1&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg"
                     />
                 </Head>
-                <body>
+                <body className="dark:bg-black dark:text-gray-50">
                     <Main />
                     <NextScript />
                 </body>
