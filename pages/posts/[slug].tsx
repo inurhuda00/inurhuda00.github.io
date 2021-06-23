@@ -6,13 +6,11 @@ import { getAllPosts, getPostBySlug } from '@lib/api'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/dist/client/router'
 import React, { Fragment } from 'react'
-import hydrate from 'next-mdx-remote/hydrate'
+import { MDXRemote } from 'next-mdx-remote'
 
 const Post = ({ postData }: any) => {
     const router = useRouter()
     const { mdxSource, frontMatter } = postData
-
-    const content = hydrate(mdxSource, { components: MDXComponents })
 
     return (
         <Fragment>
@@ -53,7 +51,14 @@ const Post = ({ postData }: any) => {
                             readingTime={frontMatter.readingTime}
                             author={frontMatter.author}
                         />
-                        <section className="prose max-w-none w-full">{content}</section>
+                        <section className="prose max-w-none w-full">
+                            <MDXRemote
+                                {...mdxSource}
+                                components={{
+                                    ...MDXComponents,
+                                }}
+                            />
+                        </section>
                     </article>
                 )}
             </Layout>

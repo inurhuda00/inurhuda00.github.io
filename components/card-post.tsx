@@ -16,7 +16,7 @@ const CardPost = ({ post }: { post: PostType | { [key: string]: any } }) => {
                         width="280"
                         height="184"
                         priority
-                        src="/images/blog/preview.jpg"
+                        src={post.image}
                         alt={`Cover Image for ${post.title}`}
                         className="rounded"
                     />

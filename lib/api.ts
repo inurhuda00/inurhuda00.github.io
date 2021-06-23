@@ -1,10 +1,9 @@
 import fs from 'fs'
 import { join } from 'path'
-import matter, { GrayMatterFile } from 'gray-matter'
+import matter from 'gray-matter'
 import rehypePrism from '@mapbox/rehype-prism'
 import readingTime from 'reading-time'
-import renderToString from 'next-mdx-remote/render-to-string'
-import MDXComponents from '@components/mdx-component'
+import { serialize } from 'next-mdx-remote/serialize'
 
 const postsDir = join(process.cwd(), '_posts')
 
@@ -21,8 +20,7 @@ export async function getPostBySlug(slug: string) {
 
     const { data, content } = matter(fileContent)
 
-    const mdxSource = await renderToString(content, {
-        components: MDXComponents,
+    const mdxSource = await serialize(content, {
         mdxOptions: {
             remarkPlugins: [
                 require('remark-autolink-headings'),
@@ -31,6 +29,7 @@ export async function getPostBySlug(slug: string) {
             ],
             rehypePlugins: [rehypePrism],
         },
+        target: ['esnext'],
     })
 
     return {
