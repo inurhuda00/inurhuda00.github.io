@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 import PostType from 'types/post'
 import DateFormatter from './date-formatter'
 
@@ -16,7 +16,7 @@ const CardPost = ({ post }: { post: PostType | { [key: string]: any } }) => {
                         width="280"
                         height="184"
                         priority
-                        src={post.image}
+                        src="/images/blog/preview.jpg"
                         alt={`Cover Image for ${post.title}`}
                         className="rounded"
                     />
