@@ -7,6 +7,7 @@ import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/dist/client/router'
 import React, { Fragment } from 'react'
 import { MDXRemote } from 'next-mdx-remote'
+import PostType from 'types/post'
 
 const Post = ({ postData }: any) => {
     const router = useRouter()
@@ -68,6 +69,8 @@ const Post = ({ postData }: any) => {
 
 export const getStaticProps = async ({ params }: any) => {
     const postData = await getPostBySlug(params.slug)
+
+    console.log(`postData`, postData)
     return {
         props: {
             postData,
@@ -79,7 +82,7 @@ export const getStaticPaths = async () => {
     const paths = await getAllPosts()
 
     return {
-        paths: paths.map(({ slug }) => ({
+        paths: paths.map(({ slug }: PostType) => ({
             params: {
                 slug,
             },

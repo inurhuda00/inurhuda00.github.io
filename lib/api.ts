@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import rehypePrism from '@mapbox/rehype-prism'
 import readingTime from 'reading-time'
 import { serialize } from 'next-mdx-remote/serialize'
+import PostType, { TVisibility } from 'types/post'
 
 const postsDir = join(process.cwd(), '_posts')
 
@@ -45,7 +46,7 @@ export async function getPostBySlug(slug: string) {
 export async function getAllPosts() {
     const slugs = await getPostsSlug()
 
-    return slugs.map((slug: string) => {
+    const posts: any = slugs.map((slug: string) => {
         const fileContent = fs.readFileSync(join(postsDir, slug), 'utf8')
         const clearSlug = slug.replace(/\.mdx$/, '')
 
@@ -57,4 +58,10 @@ export async function getAllPosts() {
             readingTime: readingTime(content),
         }
     })
+
+    const publicPosts = posts.filter(
+        (post: PostType) => post.visibility === TVisibility.public
+    )
+
+    return publicPosts
 }
