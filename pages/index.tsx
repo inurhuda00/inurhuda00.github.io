@@ -1,11 +1,10 @@
 import Image from "next/image"
 
-import { config } from "@/config/site"
 import { Layout } from "@/components/layout"
 
-export default function IndexPage() {
+export default function Index() {
   return (
-    <Layout title="Home" description={config.description}>
+    <Layout meta={{ title: "Home" }}>
       <section className="mx-auto w-full max-w-4xl bg-white px-6 pt-16 dark:bg-slate-900">
         <section className="mb-12 dark:text-slate-100">
           <div className="md:float-right">

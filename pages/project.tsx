@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 import { Layout } from "@/components/layout"
 import {
@@ -38,16 +39,16 @@ const LiveViewButton = ({ href = "#" }) => (
   </TooltipProvider>
 )
 
-export default function IndexPage() {
+export default function Projects() {
   return (
-    <Layout title="Projects" description="Latest projects">
+    <Layout meta={{ title: "Projects", description: "Lates Projects" }}>
       <section className="mx-auto mb-6 w-full max-w-4xl px-6 pt-16">
         <h2 className="mb-6 text-lg font-medium uppercase tracking-wide text-slate-500 dark:text-slate-200">
           Latest Projects
         </h2>
         <div className="mb-12 grid gap-4">
           <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row sm:items-start">
-            <a href="#" className="w-full sm:w-2/5">
+            <Link href="#" className="w-full sm:w-2/5">
               <Image
                 src="/images/projects/personal.webp"
                 alt="thumbnail Blog App"
@@ -56,29 +57,29 @@ export default function IndexPage() {
                 width={713}
                 height={437}
               />
-            </a>
+            </Link>
             <div className="mt-4 w-full px-4 sm:w-3/5">
-              <a href="#">
+              <Link href="#">
                 <h3 className="text-lg font-semibold leading-6 text-slate-800">
                   inurhuda00.github.io
                 </h3>
-              </a>
+              </Link>
               <p className="line-clamp-3 mb-3 text-sm text-slate-400">
                 Website pribadi untuk memperkenalkan diri ke internet dan RL
               </p>
               <footer className="flex items-center justify-between pb-4">
                 <span className="text-[11px] text-slate-400">
                   by{" "}
-                  <a href="/" className="font-medium text-slate-700">
+                  <Link href="/" className="font-medium text-slate-700">
                     inurhuda00
-                  </a>
+                  </Link>
                 </span>
                 <LiveViewButton />
               </footer>
             </div>
           </article>
           <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row">
-            <a href="#" className="w-full sm:w-2/5">
+            <Link href="#" className="w-full sm:w-2/5">
               <Image
                 src="/images/projects/frontendmentor.webp"
                 alt="thumbnail Blog App"
@@ -87,13 +88,13 @@ export default function IndexPage() {
                 width={713}
                 height={437}
               />
-            </a>
+            </Link>
             <div className="mt-4 w-full px-4 sm:w-3/5">
-              <a href="#">
+              <Link href="#">
                 <h3 className="text-lg font-semibold leading-6 text-slate-800">
                   Frontendmentor Mentor Challenges
                 </h3>
-              </a>
+              </Link>
               <p className="line-clamp-3 mb-3 text-sm text-slate-400">
                 Belajar convert design to code dengan fronendmentor.io based on
                 brief dan style guide
@@ -101,16 +102,16 @@ export default function IndexPage() {
               <footer className="flex items-center justify-between pb-4">
                 <span className="text-[11px] text-slate-400">
                   by{" "}
-                  <a href="/" className="font-medium text-slate-700">
+                  <Link href="/" className="font-medium text-slate-700">
                     inurhuda00
-                  </a>
+                  </Link>
                 </span>
                 <LiveViewButton />
               </footer>
             </div>
           </article>
           <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row">
-            <a href="#" className="w-full sm:w-2/5">
+            <Link href="#" className="w-full sm:w-2/5">
               <Image
                 src="/images/projects/blog-app.webp"
                 alt="thumbnail Blog App"
@@ -119,29 +120,29 @@ export default function IndexPage() {
                 width={713}
                 height={437}
               />
-            </a>
+            </Link>
             <div className="mt-4 w-full px-4 sm:w-3/5">
-              <a href="#">
+              <Link href="#">
                 <h3 className="text-lg font-semibold leading-6 text-slate-800">
                   Blog app
                 </h3>
-              </a>
+              </Link>
               <p className="line-clamp-3 mb-3 text-sm text-slate-400">
                 Website CMS dengan roles dan permission dengan editor page
               </p>
               <footer className="flex items-center justify-between pb-4">
                 <span className="text-[11px] text-slate-400">
                   by{" "}
-                  <a href="/" className="font-medium text-slate-700">
+                  <Link href="/" className="font-medium text-slate-700">
                     inurhuda00
-                  </a>
+                  </Link>
                 </span>
                 <LiveViewButton />
               </footer>
             </div>
           </article>
           <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row">
-            <a href="#" className="w-full sm:w-2/5">
+            <Link href="#" className="w-full sm:w-2/5">
               <Image
                 src="/images/projects/mozzaik.webp"
                 alt="thumbnail Blog App"
@@ -150,22 +151,22 @@ export default function IndexPage() {
                 width={713}
                 height={437}
               />
-            </a>
+            </Link>
             <div className="mt-4 w-full px-4 sm:w-3/5">
-              <a href="#">
+              <Link href="#">
                 <h3 className="text-lg font-semibold leading-6 text-slate-800">
                   mozzaik.id
                 </h3>
-              </a>
+              </Link>
               <p className="line-clamp-3 mb-3 text-sm text-slate-400">
                 Kanal media berfokus pada seni dan budaya
               </p>
               <footer className="flex items-center justify-between pb-4">
                 <span className="text-[11px] text-slate-400">
                   by{" "}
-                  <a href="/" className="font-medium text-slate-700">
+                  <Link href="/" className="font-medium text-slate-700">
                     inurhuda00
-                  </a>
+                  </Link>
                 </span>
                 <LiveViewButton />
               </footer>

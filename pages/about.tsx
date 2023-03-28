@@ -1,16 +1,15 @@
+import Link from "next/link"
+
 import { Layout } from "@/components/layout"
 import { Button } from "@/components/ui/button"
 
-export default function IndexPage() {
+export default function About() {
   return (
-    <Layout title="About" description="Tentang">
+    <Layout meta={{ title: "About", description: "Tentang" }}>
       <section className="mx-auto w-full max-w-4xl px-6 pt-16">
-        <section
-          title="About Ilham Nuruddin Al Huda"
-          className="mb-12 dark:text-slate-100"
-        >
+        <section className="mb-12 dark:text-slate-100">
           <h1 className="pb-2 text-5xl font-extrabold text-black dark:text-slate-100">
-            Ilham Nuruddin Al Huda
+            Ilham Nuruddin
           </h1>
           <h2 className="pb-4 text-black dark:text-slate-100">
             <div>
@@ -19,9 +18,9 @@ export default function IndexPage() {
                 melakukan eksplorasi untuk membuat website dengan optimal
                 (onpage), UI yang minimalis dan clean dengan fungsionalitas yang
                 baik{" "}
-                <a href="/project" className="text-slate-400 underline">
+                <Link href="/project" className="text-slate-400 underline">
                   (lihat)
-                </a>
+                </Link>
                 .
               </p>
             </div>
