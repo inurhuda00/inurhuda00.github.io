@@ -9,6 +9,36 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
+const LiveViewButton = ({ href = "#" }) => (
+  <TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger>
+        <a
+          href={href}
+          className="inline-block rounded-full border-2 border-slate-700 p-1 text-right text-sm text-slate-700 dark:text-slate-400"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1={7} y1={17} x2={17} y2={7} />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </a>
+      </TooltipTrigger>
+      <TooltipContent>
+        <p>Live Demo</p>
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+)
+
 export default function IndexPage() {
   return (
     <Layout>
@@ -23,8 +53,8 @@ export default function IndexPage() {
           Latest Projects
         </h2>
         <div className="mb-12 grid gap-4">
-          <article className="flex items-center rounded-sm p-2 dark:bg-white">
-            <a href="#" className="w-2/5">
+          <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row">
+            <a href="#" className="w-full sm:w-2/5">
               <Image
                 src="/images/projects/personal.jpeg"
                 alt="thumbnail Blog App"
@@ -33,7 +63,7 @@ export default function IndexPage() {
                 height={437}
               />
             </a>
-            <div className="w-3/5 px-4">
+            <div className="mt-4 w-full px-4 sm:w-3/5">
               <a href="#">
                 <h3 className="text-lg font-semibold leading-6 text-slate-800">
                   inurhuda00.github.io
@@ -43,32 +73,18 @@ export default function IndexPage() {
                 Website pribadi untuk memperkenalkan diri ke internet dan RL
               </p>
               <footer className="flex items-center justify-between pb-4">
-                <span className="text-[11px] font-medium text-slate-700">
-                  <span className="text-slate-400"> By </span>inurhuda00
+                <span className="text-[11px] text-slate-400">
+                  by{" "}
+                  <a href="/" className="font-medium text-slate-700">
+                    inurhuda00
+                  </a>
                 </span>
-                <a
-                  href="#"
-                  className="inline-block rounded-full border-2 border-slate-700 p-1 text-right text-sm text-slate-700 dark:text-slate-400"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1={7} y1={17} x2={17} y2={7} />
-                    <polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </a>
+                <LiveViewButton />
               </footer>
             </div>
           </article>
-          <article className="flex items-center rounded-sm p-2 dark:bg-white">
-            <a href="#" className="w-2/5">
+          <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row">
+            <a href="#" className="w-full sm:w-2/5">
               <Image
                 src="/images/projects/frontendmentor.jpeg"
                 alt="thumbnail Blog App"
@@ -77,7 +93,7 @@ export default function IndexPage() {
                 height={437}
               />
             </a>
-            <div className="w-3/5 px-4">
+            <div className="mt-4 w-full px-4 sm:w-3/5">
               <a href="#">
                 <h3 className="text-lg font-semibold leading-6 text-slate-800">
                   Frontendmentor Mentor Challenges
@@ -88,32 +104,18 @@ export default function IndexPage() {
                 brief dan style guide
               </p>
               <footer className="flex items-center justify-between pb-4">
-                <span className="text-[11px] font-medium text-slate-700">
-                  <span className="text-slate-400"> By </span>inurhuda00
+                <span className="text-[11px] text-slate-400">
+                  by{" "}
+                  <a href="/" className="font-medium text-slate-700">
+                    inurhuda00
+                  </a>
                 </span>
-                <a
-                  href="#"
-                  className="inline-block rounded-full border-2 border-slate-700 p-1 text-right text-sm text-slate-700 dark:text-slate-400"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1={7} y1={17} x2={17} y2={7} />
-                    <polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </a>
+                <LiveViewButton />
               </footer>
             </div>
           </article>
-          <article className="flex items-center rounded-sm p-2 dark:bg-white">
-            <a href="#" className="w-2/5">
+          <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row">
+            <a href="#" className="w-full sm:w-2/5">
               <Image
                 src="/images/projects/blog-app.jpeg"
                 alt="thumbnail Blog App"
@@ -122,7 +124,7 @@ export default function IndexPage() {
                 height={437}
               />
             </a>
-            <div className="w-3/5 px-4">
+            <div className="mt-4 w-full px-4 sm:w-3/5">
               <a href="#">
                 <h3 className="text-lg font-semibold leading-6 text-slate-800">
                   Blog app
@@ -132,32 +134,18 @@ export default function IndexPage() {
                 Website CMS dengan roles dan permission dengan editor page
               </p>
               <footer className="flex items-center justify-between pb-4">
-                <span className="text-[11px] font-medium text-slate-700">
-                  <span className="text-slate-400"> By </span>inurhuda00
+                <span className="text-[11px] text-slate-400">
+                  by{" "}
+                  <a href="/" className="font-medium text-slate-700">
+                    inurhuda00
+                  </a>
                 </span>
-                <a
-                  href="#"
-                  className="inline-block rounded-full border-2 border-slate-700 p-1 text-right text-sm text-slate-700 dark:text-slate-400"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1={7} y1={17} x2={17} y2={7} />
-                    <polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </a>
+                <LiveViewButton />
               </footer>
             </div>
           </article>
-          <article className="flex items-center rounded-sm p-2 dark:bg-white">
-            <a href="#" className="w-2/5">
+          <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row">
+            <a href="#" className="w-full sm:w-2/5">
               <Image
                 src="/images/projects/mozzaik.jpeg"
                 alt="thumbnail Blog App"
@@ -166,7 +154,7 @@ export default function IndexPage() {
                 height={437}
               />
             </a>
-            <div className="w-3/5 px-4">
+            <div className="mt-4 w-full px-4 sm:w-3/5">
               <a href="#">
                 <h3 className="text-lg font-semibold leading-6 text-slate-800">
                   mozzaik.id
@@ -176,36 +164,13 @@ export default function IndexPage() {
                 Kanal media berfokus pada seni dan budaya
               </p>
               <footer className="flex items-center justify-between pb-4">
-                <span className="text-[11px] font-medium text-slate-700">
-                  <span className="text-slate-400"> By </span>inurhuda00
+                <span className="text-[11px] text-slate-400">
+                  by{" "}
+                  <a href="/" className="font-medium text-slate-700">
+                    inurhuda00
+                  </a>
                 </span>
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <a
-                        href="#"
-                        className="inline-block rounded-full border-2 border-slate-700 p-1 text-right text-sm text-slate-700 dark:text-slate-400"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <line x1={7} y1={17} x2={17} y2={7} />
-                          <polyline points="7 7 17 7 17 17" />
-                        </svg>
-                      </a>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Live Demo</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+                <LiveViewButton />
               </footer>
             </div>
           </article>

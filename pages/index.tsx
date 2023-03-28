@@ -13,7 +13,7 @@ export default function IndexPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="mx-auto w-full max-w-4xl bg-white px-6 pt-16 dark:bg-slate-900">
-        <section title="Profile Info" className="mb-12 dark:text-slate-100">
+        <section className="mb-12 dark:text-slate-100">
           <div className="md:float-right">
             <Image
               src="/avatar.jpg"
@@ -23,7 +23,7 @@ export default function IndexPage() {
               height={50}
             />
           </div>
-          <section title="Ilham Nuruddin">
+          <section>
             <h1 className="pb-2 text-5xl font-extrabold text-black dark:text-slate-100">
               Ilham Nuruddin
             </h1>
@@ -36,10 +36,7 @@ export default function IndexPage() {
               </div>
             </h2>
           </section>
-          <section
-            title="socials"
-            className="scrollbar-hide relative flex w-full snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth whitespace-nowrap py-6"
-          >
+          <section className="scrollbar-hide relative flex w-full snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth whitespace-nowrap py-6">
             <a
               className="flex items-center font-semibold"
               rel="noreferrer"
@@ -98,7 +95,7 @@ export default function IndexPage() {
               className="flex items-center pl-8 font-semibold"
               rel="noreferrer"
               target="_blank"
-              href="https://github.com/lukeshay"
+              href="https://www.instagram.com/nurhudai_"
             >
               <svg
                 className="h-8 w-8 pr-2"
@@ -113,7 +110,7 @@ export default function IndexPage() {
               </span>
             </a>
           </section>
-          <section title="Project And Event">
+          <section>
             <ul>
               <li className="group flex w-full items-center justify-between border-b border-slate-200 py-5 dark:border-slate-800">
                 <div>
