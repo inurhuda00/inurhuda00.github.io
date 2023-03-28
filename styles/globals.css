@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .scrollbar-hide {
+    /* IE and Edge */
+    -ms-overflow-style: none;
+
+    /* firefox */
+    scrollbar-width: none;
+  }
+
+  /* safari and chrome */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
