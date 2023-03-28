@@ -1,17 +1,9 @@
-import Head from "next/head"
-
 import { Layout } from "@/components/layout"
 import { Button } from "@/components/ui/button"
 
 export default function IndexPage() {
   return (
-    <Layout>
-      <Head>
-        <title>Tentang | Ilham Nuruddin</title>
-        <meta name="description" content="Tentang | Ilham Nuruddin" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout title="About" description="Tentang">
       <section className="mx-auto w-full max-w-4xl px-6 pt-16">
         <section
           title="About Ilham Nuruddin Al Huda"
@@ -46,7 +38,6 @@ export default function IndexPage() {
               terkait dunia tech. lets discuss and connect on :
             </h3>
             <div className="grid gap-2 pt-4">
-              {" "}
               <a
                 className="flex items-center font-semibold"
                 rel="noreferrer"
@@ -107,7 +98,7 @@ export default function IndexPage() {
                 className="flex items-center font-semibold"
                 rel="noreferrer"
                 target="_blank"
-                href="https://github.com/lukeshay"
+                href="https://www.instagram.com/nurhudai_"
               >
                 <svg
                   className="h-8 w-8 pr-2"

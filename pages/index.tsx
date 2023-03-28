@@ -1,24 +1,18 @@
-import Head from "next/head"
 import Image from "next/image"
 
+import { config } from "@/config/site"
 import { Layout } from "@/components/layout"
 
 export default function IndexPage() {
   return (
-    <Layout>
-      <Head>
-        <title>Ilham Nuruddin | Personal Website</title>
-        <meta name="description" content="Ilham Nuruddin | Personal Website" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout title="Home" description={config.description}>
       <section className="mx-auto w-full max-w-4xl bg-white px-6 pt-16 dark:bg-slate-900">
         <section className="mb-12 dark:text-slate-100">
           <div className="md:float-right">
             <Image
-              src="/avatar.jpg"
+              src="/avatar.webp"
               alt="Gravatar"
-              className="mb-6 h-auto w-24 rounded-full shadow-lg shadow-slate-800/5 ring-1 ring-slate-800/5 md:mb-0 md:h-auto"
+              className="mb-6 h-40 w-40 rounded-full border-2 border-slate-900 object-cover shadow-lg shadow-slate-800/5 ring-1 ring-slate-800/5 dark:border-slate-100 md:mb-0"
               width={50}
               height={50}
             />

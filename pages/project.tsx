@@ -1,4 +1,3 @@
-import Head from "next/head"
 import Image from "next/image"
 
 import { Layout } from "@/components/layout"
@@ -41,24 +40,19 @@ const LiveViewButton = ({ href = "#" }) => (
 
 export default function IndexPage() {
   return (
-    <Layout>
-      <Head>
-        <title>Project | Ilham Nuruddin</title>
-        <meta name="description" content="Project | Ilham Nuruddin" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout title="Projects" description="Latest projects">
       <section className="mx-auto mb-6 w-full max-w-4xl px-6 pt-16">
         <h2 className="mb-6 text-lg font-medium uppercase tracking-wide text-slate-500 dark:text-slate-200">
           Latest Projects
         </h2>
         <div className="mb-12 grid gap-4">
-          <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row">
+          <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row sm:items-start">
             <a href="#" className="w-full sm:w-2/5">
               <Image
-                src="/images/projects/personal.jpeg"
+                src="/images/projects/personal.webp"
                 alt="thumbnail Blog App"
                 className="aspect-[713/437] rounded-t-sm border border-slate-900 object-cover object-top"
+                loading="eager"
                 width={713}
                 height={437}
               />
@@ -86,9 +80,10 @@ export default function IndexPage() {
           <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row">
             <a href="#" className="w-full sm:w-2/5">
               <Image
-                src="/images/projects/frontendmentor.jpeg"
+                src="/images/projects/frontendmentor.webp"
                 alt="thumbnail Blog App"
                 className="aspect-[713/437] rounded-t-sm border border-slate-900 object-cover object-top"
+                loading="eager"
                 width={713}
                 height={437}
               />
@@ -117,9 +112,10 @@ export default function IndexPage() {
           <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row">
             <a href="#" className="w-full sm:w-2/5">
               <Image
-                src="/images/projects/blog-app.jpeg"
+                src="/images/projects/blog-app.webp"
                 alt="thumbnail Blog App"
                 className="aspect-[713/437] rounded-t-sm border border-slate-900 object-cover object-top"
+                loading="eager"
                 width={713}
                 height={437}
               />
@@ -147,9 +143,10 @@ export default function IndexPage() {
           <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row">
             <a href="#" className="w-full sm:w-2/5">
               <Image
-                src="/images/projects/mozzaik.jpeg"
+                src="/images/projects/mozzaik.webp"
                 alt="thumbnail Blog App"
                 className="aspect-[713/437] rounded-t-sm border border-slate-900 object-cover object-top"
+                loading="eager"
                 width={713}
                 height={437}
               />
