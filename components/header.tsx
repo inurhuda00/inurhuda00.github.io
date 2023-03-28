@@ -1,6 +1,6 @@
+import { config } from "@/config/site"
 import { Navigation } from "@/components/navigation"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { config } from "@/config/site"
 
 export function Header() {
   return (

@@ -18,7 +18,7 @@ export const Icons = {
   logo: (props) => (
     <span {...props}>
       <Image
-        src="/avatar.jpg"
+        src="/icon.webp"
         alt="logo"
         className="h-6 w-6 object-cover"
         width={24}
