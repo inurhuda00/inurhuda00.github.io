@@ -1,5 +1,6 @@
 import Link from "next/link"
 
+import { config } from "@/config/site"
 import { Layout } from "@/components/layout"
 import { Button } from "@/components/ui/button"
 
@@ -25,12 +26,14 @@ export default function About() {
               </p>
             </div>
           </h2>
-          <Button
-            variant="subtle"
-            className="text-base hover:bg-transparent focus:ring-0"
-          >
-            Download CV
-          </Button>
+          <Link href={config.resume} rel="noreferrer" target="_blank">
+            <Button
+              variant="subtle"
+              className="text-base hover:bg-transparent focus:ring-0"
+            >
+              Download CV
+            </Button>
+          </Link>
           <div className="mt-4">
             <h3 className="max-w-md">
               Tanya apapun tentang programing, blockchain and crypto. apapun
