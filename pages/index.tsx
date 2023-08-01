@@ -23,8 +23,10 @@ export default function Index() {
             <h2 className="pb-4 text-black dark:text-slate-100">
               <div>
                 <p className="max-w-2xl py-3">
-                  Freshgraduate di Universitas Amikom Yogyakarta, sedang
-                  mendalami web developer terkhusus Frontend.
+                  Hii, I'm a fullstack web developer who Passionate about
+                  developing an awesome web app. I would like to learn new
+                  things about the latest technology to create websites and
+                  other tools that support them
                 </p>
               </div>
             </h2>

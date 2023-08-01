@@ -61,10 +61,41 @@ export default function Projects() {
             <div className="mt-4 w-full px-4 sm:w-3/5">
               <Link href="#">
                 <h3 className="text-lg font-semibold leading-6 text-slate-800">
+                  Ruang Work
+                </h3>
+              </Link>
+              <p className="mb-3 line-clamp-3 text-sm text-slate-400">
+                Website collaboration space
+              </p>
+              <footer className="flex items-center justify-between pb-4">
+                <span className="text-[11px] text-slate-400">
+                  by{" "}
+                  <Link href="/" className="font-medium text-slate-700">
+                    inurhuda00
+                  </Link>
+                </span>
+                <LiveViewButton />
+              </footer>
+            </div>
+          </article>
+          <article className="flex flex-col items-center rounded-sm p-2 dark:bg-white sm:flex-row sm:items-start">
+            <Link href="#" className="w-full sm:w-2/5">
+              <Image
+                src="/images/projects/personal.webp"
+                alt="thumbnail Blog App"
+                className="aspect-[713/437] rounded-t-sm border border-slate-900 object-cover object-top"
+                loading="eager"
+                width={713}
+                height={437}
+              />
+            </Link>
+            <div className="mt-4 w-full px-4 sm:w-3/5">
+              <Link href="#">
+                <h3 className="text-lg font-semibold leading-6 text-slate-800">
                   inurhuda00.github.io
                 </h3>
               </Link>
-              <p className="line-clamp-3 mb-3 text-sm text-slate-400">
+              <p className="mb-3 line-clamp-3 text-sm text-slate-400">
                 Website pribadi untuk memperkenalkan diri ke internet dan RL
               </p>
               <footer className="flex items-center justify-between pb-4">
@@ -95,7 +126,7 @@ export default function Projects() {
                   Frontendmentor Mentor Challenges
                 </h3>
               </Link>
-              <p className="line-clamp-3 mb-3 text-sm text-slate-400">
+              <p className="mb-3 line-clamp-3 text-sm text-slate-400">
                 Belajar convert design to code dengan fronendmentor.io based on
                 brief dan style guide
               </p>
@@ -127,7 +158,7 @@ export default function Projects() {
                   Blog app
                 </h3>
               </Link>
-              <p className="line-clamp-3 mb-3 text-sm text-slate-400">
+              <p className="mb-3 line-clamp-3 text-sm text-slate-400">
                 Website CMS dengan roles dan permission dengan editor page
               </p>
               <footer className="flex items-center justify-between pb-4">
@@ -158,7 +189,7 @@ export default function Projects() {
                   mozzaik.id
                 </h3>
               </Link>
-              <p className="line-clamp-3 mb-3 text-sm text-slate-400">
+              <p className="mb-3 line-clamp-3 text-sm text-slate-400">
                 Kanal media berfokus pada seni dan budaya
               </p>
               <footer className="flex items-center justify-between pb-4">
