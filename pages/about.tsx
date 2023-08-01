@@ -1,21 +1,22 @@
 import Link from "next/link"
 
 import { config } from "@/config/site"
+import { cn } from "@/lib/utils"
 import { Layout } from "@/components/layout"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 
 export default function About() {
   return (
     <Layout meta={{ title: "About", description: "Tentang" }}>
       <section className="mx-auto w-full max-w-4xl px-6 pt-16">
         <section className="mb-12 dark:text-slate-100">
-          <Link href={config.resume} rel="noreferrer" target="_blank">
-            <Button
-              variant="subtle"
-              className="text-base hover:bg-transparent focus:ring-0"
-            >
-              Download CV
-            </Button>
+          <Link
+            href={config.resume}
+            rel="noreferrer"
+            target="_blank"
+            className={cn(buttonVariants({ variant: "subtle" }))}
+          >
+            Download CV
           </Link>
           <div className="mt-4">
             <h3 className="max-w-md">

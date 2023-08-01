@@ -10,12 +10,11 @@ interface SiteConfig {
 }
 
 export const config: SiteConfig = {
-  name: "Ilham Nuruddin",
+  name: "Ilham Nuruddin Al Huda",
   description: "Personal Website built with Radix UI and Tailwind CSS.",
   image: "/ogimage.webp",
   website: "inurhuda00.github.io",
-  resume:
-    "https://drive.google.com/file/d/1VWi0p6LTHWA1Zh_dMyBdjjfFj0z681z8/view?usp=share_link",
+  resume: "https://www.linkedin.com/in/inurhuda00",
   navs: [
     {
       title: "Home",
