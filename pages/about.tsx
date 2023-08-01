@@ -9,23 +9,6 @@ export default function About() {
     <Layout meta={{ title: "About", description: "Tentang" }}>
       <section className="mx-auto w-full max-w-4xl px-6 pt-16">
         <section className="mb-12 dark:text-slate-100">
-          <h1 className="pb-2 text-5xl font-extrabold text-black dark:text-slate-100">
-            Ilham Nuruddin
-          </h1>
-          <h2 className="pb-4 text-black dark:text-slate-100">
-            <div>
-              <p className="py-3">
-                Sedang mendalami Web Developer terkhusus Frontend. Suka
-                melakukan eksplorasi untuk membuat website dengan optimal
-                (onpage), UI yang minimalis dan clean dengan fungsionalitas yang
-                baik{" "}
-                <Link href="/project" className="text-slate-400 underline">
-                  (lihat)
-                </Link>
-                .
-              </p>
-            </div>
-          </h2>
           <Link href={config.resume} rel="noreferrer" target="_blank">
             <Button
               variant="subtle"
