@@ -1,7 +1,7 @@
 import Link from "next/link"
+import common from "@/content/common"
 
 import { NavItem } from "@/types/nav"
-import { config } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { Button } from "@/components/ui/button"
@@ -60,7 +60,7 @@ export function Navigation({ items }: NavigationProps) {
         >
           <DropdownMenuLabel>
             <Link href="/" className="flex items-center">
-              <Icons.logo className="mr-2" /> {config.name}
+              <Icons.logo className="mr-2" /> {common.name}
             </Link>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />

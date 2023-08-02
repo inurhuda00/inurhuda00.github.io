@@ -1,11 +1,10 @@
 import Head from "next/head"
-
-import { config } from "@/config/site"
+import common from "@/content/common"
 
 export default function Meta({
   title = "inurhuda00.github.io",
-  description = `inurhuda00.github.io is ${config.description}`,
-  image = `${config.image}`,
+  description = `inurhuda00.github.io is ${common.description}`,
+  image = `${common.image}`,
 }: {
   title?: string
   description?: string
@@ -13,10 +12,10 @@ export default function Meta({
 }) {
   return (
     <Head>
-      <title>{`${title} - ${config.website}`}</title>
+      <title>{`${title} - ${common.website}`}</title>
       <meta
         name="description"
-        content={`${description} | ${config.name} inurhuda00.github.io`}
+        content={`${description} | ${common.name} inurhuda00.github.io`}
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
@@ -57,7 +56,7 @@ export default function Meta({
       <meta name="twitter:creator" content="@seiriooss" />
       <meta
         name="twitter:title"
-        content={`inurhuda00.github.io - ${config.name}`}
+        content={`inurhuda00.github.io - ${common.name}`}
       />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
