@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import common from "@/content/common"
 import projects from "@/content/projects"
+import avatar from "@/public/avatar.webp"
 
 import { Layout } from "@/components/layout"
 
@@ -12,7 +13,7 @@ export default function Index() {
         <section className="mb-12 dark:text-slate-100">
           <div className="md:float-right">
             <Image
-              src="/avatar.webp"
+              src={avatar}
               alt="Gravatar"
               className="mb-6 h-40 w-40 rounded-full border-2 border-slate-900 object-cover shadow-lg shadow-slate-800/5 ring-1 ring-slate-800/5 dark:border-slate-100 md:mb-0"
               width={50}
@@ -30,12 +31,13 @@ export default function Index() {
             </h2>
           </section>
           <section className="scrollbar-hide relative flex w-full snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth whitespace-nowrap py-6">
-            {common.socials.map((social) => (
+            {common.socials.map((social, i) => (
               <a
                 className="flex items-center font-semibold"
                 rel="noreferrer"
                 target="_blank"
                 href={social.href}
+                key={i}
               >
                 <social.icon className="h-8 w-8 pr-2" />
                 <span className="text-slate-700 dark:text-slate-400">
@@ -46,8 +48,11 @@ export default function Index() {
           </section>
           <section>
             <ul>
-              {projects.map((project) => (
-                <li className="group flex w-full items-center justify-between border-b border-slate-200 py-5 dark:border-slate-800">
+              {projects.map((project, i) => (
+                <li
+                  className="group flex w-full items-center justify-between border-b border-slate-200 py-5 dark:border-slate-800"
+                  key={i}
+                >
                   <div>
                     <h3 className="text-lg font-medium dark:text-slate-100">
                       {project.title}

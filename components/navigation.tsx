@@ -50,7 +50,7 @@ export function Navigation({ items }: NavigationProps) {
             className="-ml-4 text-base hover:bg-transparent focus:ring-0 md:hidden"
           >
             <Icons.logo className="mr-2" />
-            <span className="font-bold">Menu</span>
+            <span className="font-medium">Menu</span>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent

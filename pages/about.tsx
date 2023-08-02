@@ -24,13 +24,14 @@ export default function About() {
               terkait dunia tech. lets discuss and connect on :
             </h3>
             <div className="grid gap-2 pt-4">
-              {common.socials.map((social) => {
+              {common.socials.map((social, i) => {
                 return (
                   <a
                     className="flex items-center font-semibold"
                     rel="noreferrer"
                     target="_blank"
                     href={social.href}
+                    key={i}
                   >
                     <social.icon className="h-8 w-8 pr-2" />
                     <span className="text-slate-700 dark:text-slate-400">
