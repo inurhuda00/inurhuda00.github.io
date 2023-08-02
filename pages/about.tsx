@@ -14,7 +14,7 @@ export default function About() {
             href={common.resume}
             rel="noreferrer"
             target="_blank"
-            className={cn(buttonVariants({ variant: "subtle" }))}
+            className={cn(buttonVariants({ variant: "secondary" }))}
           >
             Download CV
           </Link>
