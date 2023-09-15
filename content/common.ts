@@ -4,12 +4,12 @@ import { instagram } from "@/components/icon/instagram"
 import { linkedin } from "@/components/icon/linkedin"
 
 export default {
-  name: "Ilham Nuruddin Al Huda",
+  name: "hi!, i'm inurhuda00",
   description:
-    "Hii, I'm a fullstack web developer who Passionate about developing an awesome web app.I would like to learn new things about the latest technology to create websites and other tools that support them",
+    "Hii, I'm a fullstack web developer who passionate about developing an awesome web app.I would like to learn new things about the latest technology to create websites",
   image: "/ogimage.webp",
-  website: "inurhuda00.github.io",
   resume: "https://www.linkedin.com/in/inurhuda00",
+  max: 4,
   socials: [
     {
       name: "LinkedIn",
@@ -33,17 +33,9 @@ export default {
     },
   ],
   navs: [
-    {
-      title: "Home",
-      href: "/",
-    },
-    {
-      title: "Project",
-      href: "/project",
-    },
-    {
-      title: "About",
-      href: "/about",
-    },
+    { name: "Home", href: "/" },
+    { name: "Projects", href: "/p" },
+    { name: "Blog", href: "https://ruang.work" },
+    { name: "About", href: "/about" },
   ],
 }
