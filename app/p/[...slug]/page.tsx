@@ -79,7 +79,7 @@ export default async function ProjectPage({ params }: ProjectProps) {
     <article className="prose max-w-full px-4 py-6 dark:prose-invert">
       <h1 className="mb-2 mt-12">{project.title}</h1>
       {project.description && (
-        <p className="mt-0 text-xl text-slate-700 dark:text-slate-200">
+        <p className="mt-0 text-xl text-default-700 dark:text-default-800">
           {project.description}
         </p>
       )}

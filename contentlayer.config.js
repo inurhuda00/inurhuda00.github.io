@@ -70,6 +70,7 @@ export const Project = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
+    images: { type: "list", of: { type: "string" } },
     from: {
       type: "date",
     },

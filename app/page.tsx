@@ -36,28 +36,29 @@ export default function Home() {
           <ul className="grid gap-4">
             {allProjects.slice(0, common.max).map((project) => (
               <Card
+                shadow="sm"
                 isHoverable
-                className="group relative flex w-full items-center justify-between border-b border-slate-200 py-5 dark:border-slate-800"
+                className="group relative flex w-full items-center justify-between border-b border-default-200 py-5 dark:border-default-800"
                 key={project._id}
               >
                 <CardBody>
                   <Link href={`/p/${project.slugAsParams}`}>
                     <h3>{project.title}</h3>
-                    <p className="max-w-lg text-sm text-slate-700 dark:text-slate-400">
+                    <p className="max-w-lg text-sm text-default-700 dark:text-default-400">
                       {project.description}
                     </p>
                   </Link>
 
                   {project.from || project.until ? (
                     <>
-                      <p className="absolute right-5 top-4 w-full -translate-y-1/2 text-right text-sm text-slate-700 group-hover:hidden dark:text-slate-400 md:top-1/2">
+                      <p className="-trandefault-y-1/2 absolute right-5 top-4 w-full text-right text-sm text-default-700 group-hover:hidden dark:text-default-400 md:top-1/2">
                         2022 - present
                       </p>
                       <Link
                         target="_blank"
                         rel="noopener noreferrer"
                         href={project.href}
-                        className="absolute right-5 top-4 hidden w-8 -translate-y-1/2 rounded-full border-2 border-slate-700 p-1 text-right text-sm text-slate-700 group-hover:inline-block dark:text-slate-400 md:top-1/2"
+                        className="-trandefault-y-1/2 absolute right-5 top-4 hidden w-8 rounded-full border-2 border-default-700 p-1 text-right text-sm text-default-700 group-hover:inline-block dark:text-default-400 md:top-1/2"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +80,7 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                       href={project.href}
-                      className="absolute right-5 top-4 w-8 -translate-y-1/2 rounded-full border-2 border-slate-700 p-1 text-right text-sm text-slate-700 group-hover:inline-block dark:text-slate-400 md:top-1/2"
+                      className="-trandefault-y-1/2 absolute right-5 top-4 w-8 rounded-full border-2 border-default-700 p-1 text-right text-sm text-default-700 group-hover:inline-block dark:text-default-400 md:top-1/2"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
