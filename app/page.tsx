@@ -5,7 +5,7 @@ import Link from "next/link"
 import BlurImage from "@/app/components/blur-image"
 
 import SocialList from "./components/socials-list"
-import { allPosts, allProjects } from "@/.contentlayer/generated"
+import { allProjects } from "@/.contentlayer/generated"
 import common from "@/content/common"
 import avatar from "@/public/avatar.png"
 import { Button } from "@nextui-org/button"
@@ -43,21 +43,21 @@ export default function Home() {
               >
                 <CardBody>
                   <Link href={`/p/${project.slugAsParams}`}>
-                    <h3>{project.title}</h3>
+                    <h3>{project.name}</h3>
                     <p className="max-w-lg text-sm text-default-700 dark:text-default-400">
                       {project.description}
                     </p>
                   </Link>
 
-                  {project.from || project.until ? (
+                  {project.created_at ? (
                     <>
                       <p className="-trandefault-y-1/2 absolute right-5 top-4 w-full text-right text-sm text-default-700 group-hover:hidden dark:text-default-400 md:top-1/2">
-                        2022 - present
+                        {} - present
                       </p>
                       <Link
                         target="_blank"
                         rel="noopener noreferrer"
-                        href={project.href}
+                        href={project.live_url}
                         className="-trandefault-y-1/2 absolute right-5 top-4 hidden w-8 rounded-full border-2 border-default-700 p-1 text-right text-sm text-default-700 group-hover:inline-block dark:text-default-400 md:top-1/2"
                       >
                         <svg
@@ -79,7 +79,7 @@ export default function Home() {
                     <Link
                       target="_blank"
                       rel="noopener noreferrer"
-                      href={project.href}
+                      href={project.live_url}
                       className="-trandefault-y-1/2 absolute right-5 top-4 w-8 rounded-full border-2 border-default-700 p-1 text-right text-sm text-default-700 group-hover:inline-block dark:text-default-400 md:top-1/2"
                     >
                       <svg
@@ -107,7 +107,7 @@ export default function Home() {
         </section>
       </section>
 
-      {allPosts.length ? (
+      {/* {allPosts.length ? (
         <section className="mb-8 px-4">
           <h3 className="mb-6 text-lg font-semibold capitalize">working on</h3>
 
@@ -139,7 +139,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-      ) : null}
+      ) : null} */}
     </Fragment>
   )
 }

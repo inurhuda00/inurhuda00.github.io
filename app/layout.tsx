@@ -51,7 +51,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={` ${epilogue.className}`}>
         <Providers attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main className="mx-auto max-w-3xl dark:bg-background dark:text-foreground">
+          <main className="mx-auto max-w-5xl dark:bg-background dark:text-foreground">
             {children}
           </main>
         </Providers>

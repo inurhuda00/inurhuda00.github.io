@@ -1,4 +1,8 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files"
+import {
+  defineDocumentType,
+  defineNestedType,
+  makeSource,
+} from "contentlayer/source-files"
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -25,30 +29,21 @@ export const Page = defineDocumentType(() => ({
       type: "string",
     },
   },
+
+  // @ts-ignore
   computedFields,
 }))
 
-export const Post = defineDocumentType(() => ({
-  name: "Post",
-  filePathPattern: `posts/**/*.mdx`,
-  contentType: "mdx",
+const Tech = defineNestedType(() => ({
+  name: "Tech",
   fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    description: {
+    name: {
       type: "string",
     },
-    cover: {
+    version: {
       type: "string",
-    },
-    date: {
-      type: "date",
-      required: true,
     },
   },
-  computedFields,
 }))
 
 export const Project = defineDocumentType(() => ({
@@ -56,32 +51,44 @@ export const Project = defineDocumentType(() => ({
   filePathPattern: `projects/**/*.mdx`,
   contentType: "mdx",
   fields: {
-    title: {
+    name: {
       type: "string",
       required: true,
     },
-    cover: {
+    about: {
+      type: "string",
+      required: true,
+    },
+    image: {
+      type: "string",
+    },
+    live_url: {
+      type: "string",
+      required: true,
+    },
+    summary: {
       type: "string",
     },
     description: {
       type: "string",
     },
-    href: {
+    created_at: {
       type: "string",
-      required: true,
     },
-    images: { type: "list", of: { type: "string" } },
-    from: {
-      type: "date",
+    technologies: {
+      type: "list",
+      of: Tech,
     },
-    until: {
-      type: "string",
+    images: {
+      type: "list",
+      of: { type: "string" },
     },
   },
+  // @ts-ignore
   computedFields,
 }))
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Post, Page, Project],
+  documentTypes: [Page, Project],
 })

@@ -14,6 +14,7 @@ const nextConfig = {
       "ui-avatars.com",
       "localhost",
       "avatar.vercel.sh",
+      "tailwindui.com",
     ],
   },
   swcMinify: true,

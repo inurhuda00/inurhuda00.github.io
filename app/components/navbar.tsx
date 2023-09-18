@@ -21,7 +21,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   return (
-    <Navbar className="mx-auto max-w-4xl">
+    <Navbar>
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
