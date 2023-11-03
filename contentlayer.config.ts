@@ -40,6 +40,9 @@ const Tech = defineNestedType(() => ({
     name: {
       type: "string",
     },
+    logo: {
+      type: "string",
+    },
     version: {
       type: "string",
     },

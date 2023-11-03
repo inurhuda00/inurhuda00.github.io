@@ -1,4 +1,4 @@
-import common from "@/content/common"
+import common from "@/content/constant"
 import { Button } from "@nextui-org/button"
 
 export default function SocialList() {

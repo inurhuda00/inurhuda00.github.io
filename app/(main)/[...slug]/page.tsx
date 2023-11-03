@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { MDX } from "@/app/components/mdx-components"
+import { MDX } from "@/app/components/shared/mdx-components"
 
 import { allPages } from "contentlayer/generated"
 
@@ -43,7 +43,7 @@ export async function generateStaticParams(): Promise<PageProps["params"][]> {
   }))
 }
 
-export default async function PagePage({ params }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const page = await getPageFromParams(params)
 
   if (!page) {

@@ -2,8 +2,8 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
-import BlurImage from "@/app/components/blur-image"
-import { MDX } from "@/app/components/mdx-components"
+import BlurImage from "@/app/components/shared/blur-image"
+import { MDX } from "@/app/components/shared/mdx-components"
 
 import { Button } from "@nextui-org/button"
 import { LinkIcon } from "@nextui-org/link"
@@ -68,7 +68,7 @@ export async function generateStaticParams(): Promise<
   }))
 }
 
-export default async function ProjectPage({ params }: ProjectProps) {
+export default async function Page({ params }: ProjectProps) {
   const project = await getProjectFromParams(params)
 
   if (!project) {
@@ -76,12 +76,12 @@ export default async function ProjectPage({ params }: ProjectProps) {
   }
 
   return (
-    <article className="mb-32">
+    <article className="mb-32 mt-6">
       <section className="relative mx-auto px-4 pt-16 leading-6 text-default-600 sm:px-6 lg:px-8 lg:pt-20">
         <div className="mx-auto grid grid-cols-1 gap-x-8 gap-y-16 text-default-600 lg:max-w-none lg:grid-cols-3">
           <div className="flex flex-col lg:pb-6">
             <h1 className="z-30 mx-0 mt-4 text-4xl font-extrabold leading-none tracking-tight text-default-900 sm:text-5xl">
-              {project.name}
+              <span className="bg-default-50">{project.name}</span>
             </h1>
             <div className="order-first flex items-center gap-2">
               <p className="leading-7 text-default-500">{project.about}</p>
@@ -105,52 +105,41 @@ export default async function ProjectPage({ params }: ProjectProps) {
               width={1600}
               height={1280}
               className="object-image relative z-20 -mb-36 block h-auto rounded-xl border bg-default-200 object-cover object-top align-middle sm:-mb-14 lg:-mb-7 xl:-mb-14"
-              alt={""}
+              alt={project.name}
             />
           </div>
         </div>
       </section>
-
-      <section className="relative px-4">
-        <div className="absolute top-52 w-full border border-default-200" />
-        <div className="grid grid-cols-4 gap-10 px-0 py-10 pt-48 md:pt-24">
-          <div className="prose relative col-span-4 mb-10 flex max-w-full flex-col space-y-8 bg-background px-4 py-6 dark:prose-invert sm:rounded-xl sm:border sm:border-default-200 md:col-span-3">
-            <MDX code={project.body.code} />
+      ˝
+      {project.technologies.length ? (
+        <section className="default-900 mx-12 my-12 mt-36 sm:mt-14 lg:mt-7 xl:mt-14">
+          <h2 className="mb-6 text-2xl font-semibold leading-9 tracking-tight text-default-900">
+            Tech Stack
+          </h2>
+          <div className="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-3">
+            {project.technologies.map((tech, index) => {
+              return (
+                <div className="bg-default p-8 sm:p-10" key={index}>
+                  <img
+                    className="max-h-12 w-full object-contain"
+                    src={`/stack/${tech.logo}`}
+                    alt={tech.name}
+                    width={158}
+                    height={48}
+                  />
+                </div>
+              )
+            })}
           </div>
-          <div className="sticky top-20 col-span-1 mt-48 hidden flex-col divide-y divide-default-200 self-start sm:flex">
-            <div className="flex flex-col space-y-4 py-5">
-              <p className="text-sm text-foreground"></p>
-              {/* <Author username={project.author} /> */}
-            </div>
-            {/* {relatedArticles.length > 0 && (
-              <div className="flex flex-col space-y-4 py-5">
-                <p className="text-sm text-default-500">Read more</p>
-                <ul className="flex flex-col space-y-4">
-                  {relatedArticles.map((post) => (
-                    <li key={post.slug}>
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="group flex flex-col space-y-2"
-                      >
-                        <p className="font-semibold text-default-700 underline-offset-4 group-hover:underline">
-                          {post.title}
-                        </p>
-                        <p className="line-clamp-2 text-sm text-default-500 underline-offset-2 group-hover:underline">
-                          {post.summary}
-                        </p>
-                        <p className="text-xs text-default-400 underline-offset-2 group-hover:underline">
-                          {formatDate(post.publishedAt)}
-                        </p>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )} */}
-          </div>
+        </section>
+      ) : null}
+      <section className="relative overflow-hidden px-4">
+        <div className="absolute top-1/4 w-full border-t border-solid border-default-200" />
+        <div className="prose relative col-span-4 mx-auto mb-10 flex max-w-3xl flex-col space-y-8 rounded-xl border border-default-200 bg-background px-4 py-6 dark:prose-invert md:col-span-3 md:p-6">
+          <MDX code={project.body.code} />
         </div>
       </section>
-      <section className="mt-20 grid grid-cols-1 gap-x-6 gap-y-10 border-x-0 border-b-0 border-t border-solid border-default-200 px-4 pt-10 leading-6 text-default-900 sm:sm:mt-20 lg:lg:mt-20 lg:grid-cols-3">
+      <section className="grid grid-cols-1 gap-x-6 gap-y-10 border-t border-solid border-default-200 px-4 pt-10 leading-6 text-default-900 lg:grid-cols-3">
         <h2 className="text-2xl font-semibold leading-9 tracking-tight text-default-900">
           Screenshots
         </h2>
@@ -165,25 +154,6 @@ export default async function ProjectPage({ params }: ProjectProps) {
               className="block h-auto max-w-full rounded-lg bg-default-200 align-middle"
             />
           ))}
-        </div>
-      </section>
-      <section className="mb-0 mt-32 grid grid-cols-1 gap-x-6 gap-y-10 border-x-0 border-b-0 border-t border-solid border-slate-200 px-4 pt-10 leading-6 text-default-900 sm:mb-0 sm:mt-32 lg:mb-0 lg:mt-32 lg:grid-cols-3">
-        <h2 className="m-0 text-2xl font-semibold leading-9 tracking-tight text-default-900">
-          Tech Stack
-        </h2>
-        <div className="max-w-none text-base lg:col-span-2">
-          <div className="mt-6 leading-7">
-            <ul className="m-0 grid grid-cols-2 gap-x-8 gap-y-6 p-0">
-              {project.technologies.map((tech, index) => (
-                <li className="text-left" key={index}>
-                  <strong className="font-normal text-default-900">
-                    {tech.name}
-                  </strong>{" "}
-                  {tech.version}
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </section>
     </article>

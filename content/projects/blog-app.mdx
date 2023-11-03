@@ -3,16 +3,15 @@ name: "Blog App"
 about: "Portal Blog"
 image: "/images/projects/blog-app/preview-blog-app-1.jpg"
 live_url: "https://github.com/inurhuda00/blog-app"
-summary: "A personal website so nice you’ll actually be inspired to publish on it."
-description: "We get it — you’ve got a blog post you’re dying to write but you can’t write it until you rebuild your personal site. We’ve got you covered, get back to writing."
+summary: "Blog websites with CMS and editors"
+description: "Blog websites with CMS and editors, build with Laravel, InertiaJs, React, Tailwindcss"
 technologies:
   [
-    { name: "Laravel" },
-    { name: "Inertiajs" },
-    { name: "React" },
-    { name: "Tailwind CSS" },
-    { name: "Tiptap" },
-    { name: "TypeScript" },
+    { name: "Laravel", logo: "laravel.svg" },
+    { name: "Inertiajs", logo: "inertia.svg" },
+    { name: "React", logo: "react.svg" },
+    { name: "Tailwind CSS", logo: "tailwindcss.svg" },
+    { name: "TypeScript", logo: "typescript.svg" },
   ]
 images:
   - /images/projects/blog-app/preview-blog-app-1.jpg
@@ -20,3 +19,22 @@ images:
   - /images/projects/blog-app/preview-blog-app-3.jpg
   - /images/projects/blog-app/preview-blog-app-4.jpg
 ---
+
+Create **Blog App** inspired by [kumparan.com](), Tried to create Editor and CMS to handle the article. [Kumparan] has own editor and not coupled with existing website, check the role and ability to provide different view.
+
+### Highlight Feature
+
+- Profile User to display profile view
+- Build Editor with Perimssion and role check
+- Build CMS for Published and Unpublished article
+- Responsive Design
+
+## Overview
+
+**Blog App**, blog/news portal with CMS and editors are equipped with roles and permissions for admins, editors, and writers. Articles must meet the criteria and pass the curation of the editor so that the article must be approved before being published to the website.
+
+## Challenge
+
+- Perimssion Using `spatie/laravel-permission` include with Policy Class to guard each role
+- Editor build with `Tiptap Editor`, Created layouting Editor base on WP Editor with sidebar and workspace to write some article and title
+- Handling Create new article with auto save, and default UUID to track the article and if user not change that article, article is still save.

@@ -5,7 +5,7 @@ import React from "react"
 import { usePathname } from "next/navigation"
 
 import { ModeToggle } from "./mode-toggle"
-import common from "@/content/common"
+import common from "@/content/constant"
 import {
   Link,
   Navbar,

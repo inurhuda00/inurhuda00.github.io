@@ -1,7 +1,7 @@
-import { facebook } from "@/components/icon/facebook"
-import { github } from "@/components/icon/github"
-import { instagram } from "@/components/icon/instagram"
-import { linkedin } from "@/components/icon/linkedin"
+import { facebook } from "@/app/components/icon/facebook"
+import { github } from "@/app/components/icon/github"
+import { instagram } from "@/app/components/icon/instagram"
+import { linkedin } from "@/app/components/icon/linkedin"
 
 export default {
   name: "hi!, i'm inurhuda00",

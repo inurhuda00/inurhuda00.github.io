@@ -1,12 +1,12 @@
 import Link from "next/link"
 
-import BlurImage from "../components/blur-image"
+import BlurImage from "../../components/shared/blur-image"
 import { allProjects } from "@/.contentlayer/generated"
 import { Button } from "@nextui-org/button"
 import { Card, CardBody } from "@nextui-org/card"
 import { LinkIcon } from "@nextui-org/link"
 
-export default async function PostPage() {
+export default async function page() {
   return (
     <section>
       <h1 className="sr-only">Projects</h1>

@@ -3,7 +3,7 @@ import React from "react"
 import { Metadata } from "next"
 import { Epilogue } from "next/font/google"
 
-import Header from "./components/navbar"
+import Header from "./components/shared/navbar"
 import "./globals.css"
 import { Providers } from "./providers"
 
