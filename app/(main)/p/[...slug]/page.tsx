@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
@@ -112,7 +113,7 @@ export default async function Page({ params }: ProjectProps) {
       </section>
       ˝
       {project.technologies.length ? (
-        <section className="default-900 mx-12 my-12 mt-36 sm:mt-14 lg:mt-7 xl:mt-14">
+        <section className="default-900 m-12 mt-36 sm:mt-14 lg:mt-7 xl:mt-14">
           <h2 className="mb-6 text-2xl font-semibold leading-9 tracking-tight text-default-900">
             Tech Stack
           </h2>
@@ -120,7 +121,7 @@ export default async function Page({ params }: ProjectProps) {
             {project.technologies.map((tech, index) => {
               return (
                 <div className="bg-default p-8 sm:p-10" key={index}>
-                  <img
+                  <Image
                     className="max-h-12 w-full object-contain"
                     src={`/stack/${tech.logo}`}
                     alt={tech.name}
